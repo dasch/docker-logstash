@@ -32,4 +32,7 @@ EXPOSE 9301
 EXPOSE 9302
 EXPOSE 9292
 
+# Expose the Syslog UDP port.
+EXPOSE 514/udp
+
 ENTRYPOINT ["/usr/lib/jvm/java-7-oracle/bin/java", "-jar", "logstash-1.2.2-flatjar.jar", "agent", "-v", "-f", "logstash.conf", "--", "web"]
